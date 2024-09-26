@@ -1,6 +1,7 @@
 import express, { Request, Response }from "express"; 
 import { indexRouter } from "./routes/indexRouter";
 import path from "node:path";
+import { messageRouter } from "./routes/messageRouter";
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.set("view engine", "ejs");
 
 
 app.use("/", indexRouter)
+
 
 
 const PORT = 3000 

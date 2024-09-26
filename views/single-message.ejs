@@ -1,15 +1,9 @@
 <html>
   <body>
-    <a href="/new">Create a message</a>
     <ul>
-      <% messages.map((message) => { %>
         <li><h1><%= message.user %></h1></li>
         <li><p><%= message.text%></p></li>
         <li><p><%= message.added%></p></li>
-        <div>
-          <a href="/messages/<%= message.id %>">View Post</a>
-        </div>
-      <% }) %>
     </ul>
   </body>
 </html>
