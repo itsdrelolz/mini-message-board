@@ -37,7 +37,7 @@ indexRouter.get("/new", (req: Request, res: Response) => {
 indexRouter.get("/messages/:id",(req: Request, res: Response) => {
  const messageId = parseInt(req.params.id, 10);
  const singleView = messages.find((message) => message.id === messageId);
-  console.log(singleView)
+  
  if (singleView) {
   res.render("single-message", { title: "Mini Messageboard", message: singleView });
 } else {
@@ -53,3 +53,7 @@ indexRouter.post("/new", (req: Request, res: Response) => {
     console.log(messages)
 })
 
+
+indexRouter.get('*', (req: Request, res: Response) => {
+  res.status(404).send("There was an error with your request");
+});
