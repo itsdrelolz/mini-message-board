@@ -1,27 +1,20 @@
-import express, { Request, Response }from "express"; 
-import { indexRouter } from "./routes/indexRouter";
-import path from "node:path";
-import { messageRouter } from "./routes/messageRouter";
+import express, { Request, Response } from "express"; 
 
+const indexRouter = require('./routes/indexRouter');
 
 const app = express();
+
+// Middleware to parse URL-encoded bodies
 app.use(express.urlencoded({ extended: true }));
-app.set("views", path.join(__dirname, "views"));
+
+// Set up view engine
 app.set("view engine", "ejs");
-
-
-
-
-
-
-
-
-
-
+app.use(express.urlencoded({ extended: true }));
+// Use indexRouter for routing
 app.use("/", indexRouter)
 
+// Define the port
+const PORT = 3000;
 
-
-const PORT = 3000 
-
+// Start the server
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));

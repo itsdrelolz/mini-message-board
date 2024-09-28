@@ -1,12 +1,14 @@
 <html>
   <body>
-   <form method="POST" action="/new">
-        <label for="name">Enter your name:</label>
-        <input name="messageUser" type="text">
-        <label for="message">Enter your message:</label>
-        <input name="messageText" type="text">
-        <input type="submit" value="Submit" />
-     </form>
-
+    <h1>Create a New Message</h1>
+    <form method="POST" action="/new">
+      <label for="username">Enter your name:</label>
+      <input name="username" type="text" required />
+      <br />
+      <label for="message">Enter your message:</label>
+      <textarea name="message" required></textarea>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
   </body>
-  </html>
+</html>
