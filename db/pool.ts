@@ -1,7 +1,7 @@
 import { Pool } from 'pg';
 
 
-
+// deactivate after project
 const pool = new Pool({
   host: 'dpg-crrnfpl6l47c73clmt80-a.ohio-postgres.render.com',
   user: 'messageapp_0w4y_user',
